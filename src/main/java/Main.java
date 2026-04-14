@@ -125,7 +125,19 @@ public class Main {
                 System.out.println("Last: " + history.peek());
                 System.out.println("Undo: " + history.pop());
             }
-            case 4 -> accounts.displayAll();
+            case 4 -> {
+                System.out.println("\n--- LINKED LIST ACCOUNTS ---");
+                accounts.displayAll();
+                System.out.println("\n--- ARRAY ACCOUNTS ---");
+                BankAccount[] arr = new BankAccount[3];
+                arr[0] = new BankAccount(1, "Ali", 150000);
+                arr[1] = new BankAccount(2, "Sara", 220000);
+                arr[2] = new BankAccount(3, "John", 300000);
+                for (int i = 0; i < arr.length; i++) {
+                    System.out.println(arr[i].accountNumber + ". " +
+                            arr[i].username + " - Balance: " + arr[i].balance);
+                }
+            }
         }
     }
 }
